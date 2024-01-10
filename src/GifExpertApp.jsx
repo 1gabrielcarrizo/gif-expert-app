@@ -6,17 +6,21 @@ const GifExpertApp = () => {
 
     const [categories, setCategories] = useState(["Dragon Ball", "Yuri On Ice"])
 
-    const onAddCategory = () => {
-        setCategories([...categories, "One Piece"])
+    const onAddCategory = (newCategory) => {
+        if(categories.includes(newCategory)) return; // si ya existe en la lista, no lo agregara de nuevo
+        setCategories([...categories, newCategory])
     }
 
     return (
         <>
-        {/* titulo */}
+            {/* titulo */}
 
             <h1>GifExpertApp</h1>
             {/* input */}
-            <AddCategory setCategories={setCategories}/>
+            <AddCategory
+                onNewCategory={onAddCategory}
+            // setCategories={setCategories}
+            />
 
             {/* listado de gif */}
 
@@ -25,7 +29,7 @@ const GifExpertApp = () => {
                     <li key={category}>{category}</li>
                 ))}
             </ol>
-                {/* gif item */}
+            {/* gif item */}
         </>
     )
 }
