@@ -5,11 +5,11 @@ import GifGrid from "./components/GifGrid"
 
 const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(["Dragon Ball"])
+    const [categories, setCategories] = useState(["Yuri On Ice"])
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return; // si ya existe en la lista, no lo agregara de nuevo
-        setCategories([...categories, newCategory])
+        setCategories([newCategory, ...categories])
     }
 
     return (
@@ -20,7 +20,6 @@ const GifExpertApp = () => {
                 onNewCategory={onAddCategory}
             />
 
-
             {
                 categories.map((category) => (
                     <GifGrid
@@ -29,7 +28,6 @@ const GifExpertApp = () => {
                     />
                 ))
             }
-
         </>
     )
 }
