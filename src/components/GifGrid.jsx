@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
-
-import { getGifs } from "../helpers/getGifs";
 import GifItem from "./GifItem";
+import useFetchGifs from "../hooks/useFetchGifs";
 
 const GifGrid = ({ category }) => {
 
-    const [images, setImages] = useState([]) // para mostrar las imagenes creamos un useState local
-
-    const getImages = async () => { // como no se puede usar el "async" en el useEffect, se crea esta funcion
-        const newImages = await getGifs(category);
-        setImages(newImages);
-    }
-
-    useEffect(() => {
-        getImages(); // se llama la funcion asincrona adentro del useEffect
-    }, [])
-
+    const {images, isLoading} = useFetchGifs(category) // llamamos nuestro custom hook
 
     return (
         <>
