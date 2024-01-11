@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { getGifs } from "../helpers/getGifs";
+import GifItem from "./GifItem";
 
 const GifGrid = ({ category }) => {
 
@@ -18,13 +20,16 @@ const GifGrid = ({ category }) => {
     return (
         <>
             <h3>{ category }</h3>
-            <ol>
+            <div className="card-grid">
                 {
-                    images.map(( {id, title} ) => (
-                        <li key={ id }>{ title }</li>
+                    images.map(( image ) => (
+                        <GifItem
+                        key={image.id}
+                        {...image} // todas las propiedades que vienen en el image las esparcimos
+                        />
                     ))
                 }
-            </ol>
+            </div>
         </>
     )
 }
