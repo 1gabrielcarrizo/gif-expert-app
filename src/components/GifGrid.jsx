@@ -1,9 +1,12 @@
+import { getGifs } from "../helpers/getGifs";
 
+const GifGrid = ({ category }) => {
 
-const GifGrid = ({ cateogry }) => {
+    getGifs(category);
+
     return (
         <>
-            <h3>{cateogry}</h3>
+            <h3>{category}</h3>
         </>
     )
 }

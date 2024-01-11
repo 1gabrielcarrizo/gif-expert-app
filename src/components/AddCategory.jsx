@@ -14,7 +14,6 @@ const AddCategory = ({ onNewCategory }) => {
     if (inputValue.trim().length <= 1) return; // no escribe en la lista si es <=1
     onNewCategory(inputValue.trim()) // se lo envia a la clase padre
     setInputValue("") // limpiamos el input
-    // setCategories(categories => [...categories, inputValue]) // nos comunicamos con el useState del padre
   }
 
   return (
