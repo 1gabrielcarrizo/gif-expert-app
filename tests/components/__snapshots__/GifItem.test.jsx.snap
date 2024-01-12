@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente <GifItem/> debe de hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Yuri Katsuki"
+      src="https://yuri-on-ice.com/yuri_katsuki.png"
+    />
+    <p>
+      Yuri Katsuki
+    </p>
+  </div>
+</div>
+`;
