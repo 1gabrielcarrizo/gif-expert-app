@@ -1,5 +1,6 @@
 import { useState } from "react"
-import {AddCategory, GifGrid} from "./components"
+import {AddCategory, GifGrid} from "."
+
 
 
 const GifExpertApp = () => {
@@ -7,8 +8,8 @@ const GifExpertApp = () => {
     const [categories, setCategories] = useState(["Yuri On Ice"])
 
     const onAddCategory = (newCategory) => {
-        if (categories.includes(newCategory)) return; // si ya existe en la lista, no lo agregara de nuevo
-        setCategories([newCategory, ...categories]) // spread operator para mantener el arreglo original
+        if (categories.includes(newCategory)) return; // si la categoria esta en la lista, no la agrega de nuevo
+        setCategories([newCategory, ...categories]) // caso contrario la agrega con spread operator
     }
 
     return (
@@ -16,12 +17,12 @@ const GifExpertApp = () => {
             <h1>GifExpertApp</h1>
             {/* el componente de abajo es un formulario con un input */}
             <AddCategory
-                onNewCategory={onAddCategory}
+                onNewCategory={onAddCategory} // pasamos la funcion como props
             />
 
             {/* se muestra el titulo con gifs por cada categoria ingresada*/}
             {
-                categories.map((category) => (
+                categories.map((category) => ( // se recorre el array con el "map"
                     <GifGrid
                         key={category}
                         category={category}

@@ -1,5 +1,5 @@
 import React from 'react'
-import GifExpertApp from './GifExpertApp'
+import { GifExpertApp } from './components'
 
 const App = () => {
   return (

@@ -9,7 +9,7 @@ const useFetchGifs = (category) => {
     const getImages = async () => { // como no se puede usar el "async" en el useEffect, se crea esta funcion
         const newImages = await getGifs(category);
         setImages(newImages);
-        setIsLoading(false)
+        setIsLoading(false);
     }
 
     useEffect(() => {

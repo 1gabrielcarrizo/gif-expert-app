@@ -1,17 +1,17 @@
 import { useState } from "react"
 import PropTypes from 'prop-types'
 
-const AddCategory = ({ onNewCategory }) => {
+const AddCategory = ({ onNewCategory }) => { // extraemos la funcion que pasamos como props
 
   const [inputValue, setInputValue] = useState("")
 
-  const onInputChange = ({ target }) => {
+  const onInputChange = ({ target }) => { // desestructuracion del "target" para el input
     setInputValue(target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (inputValue.trim().length <= 1) return; // no escribe en la lista si es <=1
+    if (inputValue.trim().length <= 1) return; // no se agrega a la lista si lo que se escribe es <=1
     onNewCategory(inputValue.trim()) // se lo envia a la clase padre
     setInputValue("") // limpiamos el input
   }
