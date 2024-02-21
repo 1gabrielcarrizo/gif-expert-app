@@ -5,7 +5,7 @@ import {AddCategory, GifGrid} from "."
 
 const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(["Yuri On Ice"])
+    const [categories, setCategories] = useState([])
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return; // si la categoria esta en la lista, no la agrega de nuevo
